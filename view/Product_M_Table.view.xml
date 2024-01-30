@@ -1,0 +1,119 @@
+<mvc:View controllerName="productmtable.controller.Product_M_Table"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+
+    
+    <Table items="{ProductModelData>/}" id="idTable" updateFinished=".onUpdateFinish"> 
+
+		<headerToolbar>
+		<Toolbar>
+		 <Title text="{i18n>title}" id="ProductCount"/>
+		 <content>
+		<ToolbarSpacer>
+		</ToolbarSpacer>
+		
+			 <SearchField id="searchField" width="auto"  search=".onLiveSearchTableData" liveChange=".onliveChange"/>
+			 <Button id="refreshButton" icon="sap-icon://refresh" press=".onRefreshPress"/>
+
+		</content>
+		</Toolbar>
+		</headerToolbar>
+                <columns> 			
+                <Column  width="12rem">
+                <Label text ="{i18n>product ID}"></Label>
+                </Column>
+				
+
+                <Column  width="7rem">
+                <Label text ="{i18n>Type Code}"></Label>
+                </Column>
+
+                <Column  width="12rem"  hAlign="Center">
+                <Label text ="{i18n>Category}"></Label>
+                </Column>
+
+                <Column  width="15rem"  hAlign="Center">
+                <Label text ="{i18n>Name}"></Label>
+                </Column>
+                
+                 <Column  width="25rem"  hAlign="Center">
+                <Label text ="{i18n>Description}"></Label>
+                </Column>
+
+                 <Column  width="12rem"  hAlign="Center">
+                <Label text ="{i18n>Supplier ID}"></Label>
+                </Column>
+
+                 <Column  width="10rem"  hAlign="Center">
+                <Label text ="{i18n>Supplier Name}"></Label>
+                </Column>
+
+                 <Column  width="10rem" hAlign="End">
+                <Label text ="{i18n>Taxterif Code}"></Label>
+                </Column>
+                </columns>
+
+                <!-- <items>
+						<ColumnListItem>
+
+							<cells>
+								<Text text="{ProductID}"/>
+							</cells>
+							<cells>
+								<Text text="{TypeCode}"/>
+							</cells>
+							<cells>
+						    	<Text text="{Category}"/>
+							</cells>
+							<cells>
+								<Text text="{Name}"/>
+							</cells>
+                            <cells>
+								<Text text="{Description}"/>
+							</cells>
+                            <cells>
+								<Text text="{SupplierID}"/>
+							</cells>
+                            <cells>
+								<Text text="{SupplierName}"/>
+							</cells>
+                            <cells>
+								<Text text="{TaxTarifCode}"/>
+							</cells>
+						</ColumnListItem>
+			</items> -->
+
+<items>
+						<ColumnListItem>
+
+							<cells>
+								<Text text="{ProductModelData>ProductID}"/>
+							</cells>
+							<cells>
+								<Text text="{ProductModelData>TypeCode}"/>
+							</cells>
+							<cells>
+						    	<Text text="{ProductModelData>Category}"/>
+							</cells>
+							<cells>
+								<Text text="{ProductModelData>Name}"/>
+							</cells>
+                            <cells>
+								<Text text="{ProductModelData>Description}"/>
+							</cells>
+                            <cells>
+								<Text text="{ProductModelData>SupplierID}"/>
+							</cells>
+                            <cells>
+								<Text text="{ProductModelData>SupplierName}"/>
+							</cells>
+                            <cells>
+								<Text text="{ProductModelData>TaxTarifCode}"/>
+							</cells>
+						</ColumnListItem>
+			</items>
+				</Table>
+        <content />
+    </Page>
+</mvc:View>
